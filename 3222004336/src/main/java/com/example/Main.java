@@ -10,16 +10,16 @@ import java.io.FileWriter;
 public class Main {
     public static void main(String[] args) {
         //从命令行获取参数
-        String orig = args[0];
-        String origDis = args[1];
-        String resultFile = args[2];
+        //String orig = args[0];
+        //String origDis = args[1];
+        //String resultFile = args[2];
         String str = "";
         String str2 = "";
 
         //从文件中读取原文
         try {
-            //InputStreamReader reader = new InputStreamReader(new FileInputStream("E:\\Maven\\repository\\firstRepository\\3222004336\\src\\main\\resources\\orig.txt"), "UTF-8");
-            InputStreamReader reader = new InputStreamReader(new FileInputStream(orig), "UTF-8");
+            InputStreamReader reader = new InputStreamReader(new FileInputStream("E:\\Maven\\repository\\firstRepository\\3222004336\\src\\main\\resources\\orig.txt"), "UTF-8");
+            //InputStreamReader reader = new InputStreamReader(new FileInputStream(orig), "UTF-8");
             BufferedReader br = new BufferedReader(reader);
             String line;
             while ((line = br.readLine()) != null) {
@@ -31,8 +31,8 @@ public class Main {
 
         //从文件中读取抄袭文章
         try {
-            //InputStreamReader reader = new InputStreamReader(new FileInputStream("E:\\Maven\\repository\\firstRepository\\3222004336\\src\\main\\resources\\orig_0.8_dis_15.txt"), "UTF-8");
-            InputStreamReader reader = new InputStreamReader(new FileInputStream(origDis), "UTF-8");
+            InputStreamReader reader = new InputStreamReader(new FileInputStream("E:\\Maven\\repository\\firstRepository\\3222004336\\src\\main\\resources\\orig_0.8_dis_101"), "UTF-8");
+            //InputStreamReader reader = new InputStreamReader(new FileInputStream(origDis), "UTF-8");
             BufferedReader br = new BufferedReader(reader);
             String line;
             while ((line = br.readLine()) != null) {
@@ -55,7 +55,7 @@ public class Main {
 
         //将查重率写入文件
         try {
-            FileWriter writer = new FileWriter(resultFile);
+            FileWriter writer = new FileWriter("result.txt");
             writer.write(result1);
             writer.close();
             System.out.println("Data has been written to the file.");
